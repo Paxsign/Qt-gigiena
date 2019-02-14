@@ -1,11 +1,13 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "QDebug"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    sum=0;
 }
 
 MainWindow::~MainWindow()
@@ -35,5 +37,23 @@ void MainWindow::on_pushButton_clicked()
        QString VOs = QString::number(VO);
        ui->voo->setText(VOs);
     }
+
+}
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    qDebug()<<sum;
+    QHBoxLayout *layout = new QHBoxLayout(this);
+    QLineEdit *lnd1 = new QLineEdit(ui->sp_deistviya->currentText());
+    QLineEdit *lnd2 = new QLineEdit(ui->time->text());
+    QLineEdit *lnd3 = new QLineEdit("12345");
+    layout->addWidget(lnd1,8);
+    layout->addWidget(lnd2,2);
+    layout->addWidget(lnd3,2);
+
+    ui->verticalLayout_7->addLayout(layout);
+    ui->verticalLayout_7->setAlignment(Qt::AlignTop);
+    sum = lnd3->text().toDouble()+sum;
+    ui->summa_kalori_potrach->setText(QString::number(sum));
 
 }

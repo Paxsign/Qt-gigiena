@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -193,6 +193,423 @@
      <attribute name="title">
       <string>Tab 2</string>
      </attribute>
+     <widget class="QLabel" name="label_19">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>0</y>
+        <width>67</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Действие</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_20">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>0</y>
+        <width>67</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Время</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="verticalLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>50</y>
+        <width>601</width>
+        <height>231</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_7"/>
+     </widget>
+     <widget class="QLineEdit" name="summa_kalori_potrach">
+      <property name="geometry">
+       <rect>
+        <x>480</x>
+        <y>300</y>
+        <width>113</width>
+        <height>25</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QWidget" name="">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>20</y>
+        <width>571</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0,2,3">
+       <property name="spacing">
+        <number>44</number>
+       </property>
+       <property name="sizeConstraint">
+        <enum>QLayout::SetFixedSize</enum>
+       </property>
+       <item>
+        <widget class="QComboBox" name="sp_deistviya">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>232</width>
+           <height>1000</height>
+          </size>
+         </property>
+         <property name="sizeIncrement">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::StrongFocus</enum>
+         </property>
+         <property name="contextMenuPolicy">
+          <enum>Qt::ActionsContextMenu</enum>
+         </property>
+         <item>
+          <property name="text">
+           <string/>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Сон</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Лежачее положение</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Отых сидя</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Отдых стоя</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Одевание и снятие одежды и обуви</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Физические упражнения(утренняя зарядка)</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Уборка постели</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Туалет</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Ходьба по дому</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Ходьба: прогулка медленная</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Ходьба в обычном темпе</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Ходьба с грузом 10кг</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Ходьба в гору(медленная)</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Ходьба в гору(в обычном темпе)</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Ходьба в гору(быстрая)</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Ходьба в гору в обычном темпе с грузом 10кг</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Ходьба под гору(медленная)</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Ходьба под гору(в обычном темпе)</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Ходьба под гору(быстрая)</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Ходьба под гору с нагрузкой</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Ходьба под гору по снежной дороге</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Прием пищи</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Езда в транспорте</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Приготовление пищи и уход за детьми</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Мытье посуды</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Стирка вручную</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Подметание пола</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Чтение учеба</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Хозяйственные работы по дому</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Студенты: слушание лекции, работа в лаборатории сидя</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Студенты: занятие на уроках</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Студенты: перерыв между занятиями</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Студенты: чтение вслух</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Студенты: работа в лаборатории стоя</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Научные работники: просмотр научной литературы</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Научные работники: реферирование научной литературы</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Научные работники: обсуждение научных проблем</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Научные работники: выполнение научного эксперимента</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Научные работники: работа за компьютером</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Плавание</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Езда на велосипеде</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Катание на коньках</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Катание на лыжах: передвижение по пересеченной местности</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Катание на лыжах: учебные занятия(тренировки)</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Пение</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Бальные танцы (вальс)</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Быстрые танцы</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Вождение автомобиля, автобуса</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Баскетбол</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Футбол</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Волейбол</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Гимнастика</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Йога</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Занятия аэробикой</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Аэробика интенсивная</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Аэробика легкая</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Бег 10 км/ч</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Бег 12 км/ч</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Бег 16 км/ч</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Тренировка с отягощениями</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="time"/>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_3">
+         <property name="text">
+          <string>Добавить</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
     </widget>
    </widget>
   </widget>
