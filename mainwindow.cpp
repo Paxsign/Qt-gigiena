@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "QDebug"
+#include <QCompleter>
+#include <QFile>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -8,6 +10,38 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     sum=0;
+
+    csvModel = new QStandardItemModel(this);
+    csvModel->setColumnCount(10);
+    csvModel->setHorizontalHeaderLabels(QStringList() <<"Продукт"<<"животн_белки"<<"растит_белки"<<"животн_жир"<<"растит_жир"<<"углеводы"<<"Ca"<<"P"<<"ккал"<<"С");
+
+    QFile file("tablitsa_produktov_2_1.csv");
+    if ( !file.open(QFile::ReadOnly | QFile::Text) ) {
+        qDebug() << "File not exists";
+    } else {
+        // Создаём поток для извлечения данных из файла
+        QTextStream in(&file);
+        // Считываем данные до конца файла
+        while (!in.atEnd())
+        {
+            // ... построчно
+            QString line = in.readLine();
+            // Добавляем в модель по строке с элементами
+            QList<QStandardItem *> standardItemsList;
+            // учитываем, что строка разделяется точкой с запятой на колонки
+            for (QString item : line.split(";")) {
+                standardItemsList.append(new QStandardItem(item));
+            }
+            csvModel->insertRow(csvModel->rowCount(), standardItemsList);
+        }
+        file.close();
+
+        QCompleter* completer = new QCompleter( this );
+            completer->setModel( csvModel );
+            completer->setCaseSensitivity( Qt::CaseInsensitive );
+            ui->produkt->setCompleter( completer );
+
+}
 }
 
 MainWindow::~MainWindow()
@@ -56,4 +90,46 @@ void MainWindow::on_pushButton_3_clicked()
     sum = lnd3->text().toDouble()+sum;
     ui->summa_kalori_potrach->setText(QString::number(sum));
 
+}
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    QList<QStandardItem*> gg= csvModel->findItems(ui->produkt->text());//поиск элемента в модели
+
+    QModelIndex i = csvModel->indexFromItem(gg.at(0));//индекс елемента
+
+    int num=i.row();//номер строки в индексе элемента QModelIndex.collum - получить номер столбца.
+
+
+
+    QHBoxLayout *layout = new QHBoxLayout(this);    // создание горизонтального слоя QHBox (вертикальный QVBox)
+        QLabel *lbl = new QLabel(csvModel->item(num,0)->text() , this);  //создание лабеля
+        QLabel *lbl1 = new QLabel(csvModel->item(num,1)->text() , this);
+        QLabel *lbl2 = new QLabel(csvModel->item(num,2)->text() , this);
+        QLabel *lbl3 = new QLabel(csvModel->item(num,3)->text() , this);
+        QLabel *lbl4 = new QLabel(csvModel->item(num,4)->text() , this);
+        QLabel *lbl5 = new QLabel(csvModel->item(num,5)->text() , this);
+        QLabel *lbl6 = new QLabel(csvModel->item(num,6)->text() , this);
+        QLabel *lbl7 = new QLabel(csvModel->item(num,7)->text() , this);
+        QLabel *lbl8 = new QLabel(csvModel->item(num,8)->text() , this);
+        QLabel *lbl9 = new QLabel(csvModel->item(num,9)->text() , this);
+        lbl->setWordWrap(true);
+        layout->addWidget(lbl);                     //запихиваем лабель в горизонтальный слой
+        layout->addWidget(lbl1);
+        layout->addWidget(lbl2);
+        layout->addWidget(lbl3);
+        layout->addWidget(lbl4);
+        layout->addWidget(lbl5);
+        layout->addWidget(lbl6);
+        layout->addWidget(lbl7);
+        layout->addWidget(lbl8);
+        layout->addWidget(lbl9);
+        ui->verticalLayout_2->addLayout(layout); //запихиваем горизонтальный слой в вертикальный созданнвй в дизайнере
+        ui->verticalLayout_2->setAlignment(Qt::AlignTop);
+        ui->verticalLayout_2->setSpacing(15);
+        ui->verticalLayout_2->setStretch(7,2);
+        ui->verticalLayout_2->setStretch(8,2);
+        ui->verticalLayout_2->setStretch(9,2);
+        kkal =kkal + ((lbl8->text().toFloat()/100)*ui->prod_kolvo->text().toFloat()); // сумма калорий (kkal обьявлен в заголовочном файле как float)
+        ui->sum_kalori->setText(QString::number(kkal));
 }
