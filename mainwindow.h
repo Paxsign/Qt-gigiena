@@ -28,6 +28,10 @@ private:
     double sum;
     QStandardItemModel *csvModel;
     float kkal;
+    float kkal_zavtrak;
+    float kkal_obed;
+    float kkal_uzin;
+    float kkal_perekus;
 };
 
 #endif // MAINWINDOW_H

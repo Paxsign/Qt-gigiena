@@ -10,6 +10,11 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     sum=0;
+    kkal=0;
+    kkal_obed=0;
+    kkal_uzin=0;
+    kkal_perekus=0;
+    kkal_zavtrak=0;
 
     csvModel = new QStandardItemModel(this);
     csvModel->setColumnCount(10);
@@ -94,12 +99,25 @@ void MainWindow::on_pushButton_3_clicked()
 
 void MainWindow::on_pushButton_2_clicked()
 {
+    QVBoxLayout *eda;
     QList<QStandardItem*> gg= csvModel->findItems(ui->produkt->text());//поиск элемента в модели
 
     QModelIndex i = csvModel->indexFromItem(gg.at(0));//индекс елемента
 
     int num=i.row();//номер строки в индексе элемента QModelIndex.collum - получить номер столбца.
 
+    if (ui->zavtrak->isChecked()){
+        eda=ui->verticalLayout_2;
+    };
+    if (ui->obed->isChecked()){
+        eda=ui->verticalLayout_8;
+    };
+    if (ui->uzin->isChecked()){
+        eda=ui->verticalLayout_9;
+    };
+    if (ui->perekus->isChecked()){
+        eda=ui->verticalLayout_10;
+    };
 
 
     QHBoxLayout *layout = new QHBoxLayout(this);    // создание горизонтального слоя QHBox (вертикальный QVBox)
@@ -124,12 +142,30 @@ void MainWindow::on_pushButton_2_clicked()
         layout->addWidget(lbl7);
         layout->addWidget(lbl8);
         layout->addWidget(lbl9);
-        ui->verticalLayout_2->addLayout(layout); //запихиваем горизонтальный слой в вертикальный созданнвй в дизайнере
-        ui->verticalLayout_2->setAlignment(Qt::AlignTop);
-        ui->verticalLayout_2->setSpacing(15);
-        ui->verticalLayout_2->setStretch(7,2);
-        ui->verticalLayout_2->setStretch(8,2);
-        ui->verticalLayout_2->setStretch(9,2);
+        eda->addLayout(layout); //запихиваем горизонтальный слой в вертикальный созданнвй в дизайнере
+        eda->setAlignment(Qt::AlignTop);
+        eda->setSpacing(15);
+        eda->setStretch(7,2);
+        eda->setStretch(8,2);
+        eda->setStretch(9,2);
+
+        if (ui->zavtrak->isChecked()){
+           kkal_zavtrak=kkal_zavtrak + ((lbl8->text().toFloat()/100)*ui->prod_kolvo->text().toFloat());
+        };
+        if (ui->obed->isChecked()){
+           kkal_obed=kkal_obed + ((lbl8->text().toFloat()/100)*ui->prod_kolvo->text().toFloat());
+        };
+        if (ui->uzin->isChecked()){
+            kkal_uzin=kkal_uzin + ((lbl8->text().toFloat()/100)*ui->prod_kolvo->text().toFloat());
+        };
+        if (ui->perekus->isChecked()){
+            kkal_perekus=kkal_perekus + ((lbl8->text().toFloat()/100)*ui->prod_kolvo->text().toFloat());
+        };
+
         kkal =kkal + ((lbl8->text().toFloat()/100)*ui->prod_kolvo->text().toFloat()); // сумма калорий (kkal обьявлен в заголовочном файле как float)
         ui->sum_kalori->setText(QString::number(kkal));
+        ui->kkal_zav->setText(QString::number(kkal_zavtrak));
+        ui->kkal_obed->setText(QString::number(kkal_obed));
+        ui->kkal_uzin->setText(QString::number(kkal_uzin));
+        ui->kkal_perekus->setText(QString::number(kkal_perekus));
 }
