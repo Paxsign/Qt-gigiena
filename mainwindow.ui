@@ -19,12 +19,12 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>761</width>
+      <width>731</width>
       <height>571</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -117,12 +117,18 @@
              <property name="text">
               <string>муж</string>
              </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
             </widget>
            </item>
            <item>
             <widget class="QRadioButton" name="zen">
              <property name="text">
               <string>жен</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
              </property>
             </widget>
            </item>
@@ -498,6 +504,11 @@
          </item>
          <item>
           <property name="text">
+           <string>Гребля</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
            <string>Езда на велосипеде</string>
           </property>
          </item>
@@ -672,7 +683,7 @@
        <string>TextLabel</string>
       </property>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -975,7 +986,1188 @@
       </property>
      </widget>
     </widget>
+    <widget class="QWidget" name="tab_3">
+     <attribute name="title">
+      <string>Страница</string>
+     </attribute>
+     <widget class="QTableWidget" name="tableWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>711</width>
+        <height>521</height>
+       </rect>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+      <row>
+       <property name="text">
+        <string>Белки</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>общее количество, г</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>% Белков животного происхождения
+по отношению к общему количеству белков</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Калорийность белков, % от общей
+ калорийности суточного рациона</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Жиры</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Общее количество жиров, г</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Количество жиров растительного 
+происхождения, % по отношению к 
+общему количеству жиров</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Калорийность жиров, % от калорийности
+ суточного рациона</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Углеводы</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Общее количество углеводов, г</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Калорийность углеводов, 
+% от калорийности суточного рациона</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Соотношение мыссы белков,
+ жиров, углеводов, г</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Содержание макроэлементов, мг</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Кальция</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Фосфора</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Содержание витамина С, мг</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Режим питания</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Кратность приема пищи</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Интервалы между приемами пищи, часы</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Распределение суточной 
+калорийности по приемам пищи</string>
+       </property>
+      </row>
+      <column>
+       <property name="text">
+        <string>Данные фактического
+ рациона</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Норматив</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Оценка</string>
+       </property>
+      </column>
+      <item row="0" column="0">
+       <property name="text">
+        <string/>
+       </property>
+      </item>
+      <item row="2" column="1">
+       <property name="text">
+        <string>55%</string>
+       </property>
+      </item>
+      <item row="3" column="1">
+       <property name="text">
+        <string>11-14%</string>
+       </property>
+      </item>
+      <item row="6" column="1">
+       <property name="text">
+        <string>25-30%</string>
+       </property>
+      </item>
+      <item row="7" column="1">
+       <property name="text">
+        <string>30-35%</string>
+       </property>
+      </item>
+      <item row="10" column="1">
+       <property name="text">
+        <string>54-56%</string>
+       </property>
+      </item>
+      <item row="11" column="1">
+       <property name="text">
+        <string>1:1:4</string>
+       </property>
+      </item>
+      <item row="17" column="1">
+       <property name="text">
+        <string>3-4</string>
+       </property>
+      </item>
+      <item row="18" column="1">
+       <property name="text">
+        <string>4-5</string>
+       </property>
+      </item>
+     </widget>
+    </widget>
    </widget>
+   <widget class="QTableWidget" name="tableWidget">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>240</y>
+      <width>411</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="showDropIndicator" stdset="0">
+     <bool>true</bool>
+    </property>
+    <property name="alternatingRowColors">
+     <bool>false</bool>
+    </property>
+    <property name="showGrid">
+     <bool>true</bool>
+    </property>
+    <attribute name="horizontalHeaderHighlightSections">
+     <bool>true</bool>
+    </attribute>
+    <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+     <bool>true</bool>
+    </attribute>
+    <attribute name="verticalHeaderHighlightSections">
+     <bool>true</bool>
+    </attribute>
+    <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+     <bool>true</bool>
+    </attribute>
+    <row>
+     <property name="text">
+      <string>сон</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>леж</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>отс </string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>отс</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>одев</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>физ</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>убор</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>туфт</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>ход дом</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>прог м</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>обыч</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>груз</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>в гору мед</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>гор об</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>гор быс</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>гор груз</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>под гор мд</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>под об</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>под быс</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>под груз</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>снег</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>пища</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>езда</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>пригот пищи</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>мытье</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>стирка</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>помет</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>чтение</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>хозраб</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>лекция</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>уроки</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>перерыв</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>чтение</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>пракика</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>науч литра</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>реферирование</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>науч пролемы</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>эксперимент</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>комп</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>плавание</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>гребля</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>велик</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>коньки</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>лыжи местность</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>ренировки</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>перие</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>вальс</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>операция</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>автомобиль автобус</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>баскет</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>футбол</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>валейб</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>гимнатиска</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>иога</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>за</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>аэр и</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>аэр л</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>ьег 10</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>бег 12</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>бег 16</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>груз</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Новая строка</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Новая строка</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Новая строка</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Новая строка</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Новая строка</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Новая строка</string>
+     </property>
+    </row>
+    <column>
+     <property name="text">
+      <string>Новый столбец</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Новый столбец</string>
+     </property>
+    </column>
+    <item row="0" column="0">
+     <property name="text">
+      <string>1.0</string>
+     </property>
+    </item>
+    <item row="0" column="1">
+     <property name="text">
+      <string>1.0</string>
+     </property>
+    </item>
+    <item row="1" column="0">
+     <property name="text">
+      <string>1.2</string>
+     </property>
+    </item>
+    <item row="1" column="1">
+     <property name="text">
+      <string>1.2</string>
+     </property>
+    </item>
+    <item row="2" column="0">
+     <property name="text">
+      <string>1.2</string>
+     </property>
+    </item>
+    <item row="2" column="1">
+     <property name="text">
+      <string>1.4</string>
+     </property>
+    </item>
+    <item row="3" column="0">
+     <property name="text">
+      <string>1.4</string>
+     </property>
+    </item>
+    <item row="3" column="1">
+     <property name="text">
+      <string>1.5</string>
+     </property>
+    </item>
+    <item row="4" column="0">
+     <property name="text">
+      <string>1.8</string>
+     </property>
+    </item>
+    <item row="4" column="1">
+     <property name="text">
+      <string>1.8</string>
+     </property>
+    </item>
+    <item row="5" column="0">
+     <property name="text">
+      <string>4.2</string>
+     </property>
+    </item>
+    <item row="5" column="1">
+     <property name="text">
+      <string>4.0</string>
+     </property>
+    </item>
+    <item row="6" column="0">
+     <property name="text">
+      <string>2.1</string>
+     </property>
+    </item>
+    <item row="6" column="1">
+     <property name="text">
+      <string>2.1</string>
+     </property>
+    </item>
+    <item row="7" column="0">
+     <property name="text">
+      <string>1.4</string>
+     </property>
+    </item>
+    <item row="7" column="1">
+     <property name="text">
+      <string>1.8</string>
+     </property>
+    </item>
+    <item row="8" column="0">
+     <property name="text">
+      <string>2.5</string>
+     </property>
+    </item>
+    <item row="8" column="1">
+     <property name="text">
+      <string>2.4</string>
+     </property>
+    </item>
+    <item row="9" column="0">
+     <property name="text">
+      <string>2.8</string>
+     </property>
+    </item>
+    <item row="9" column="1">
+     <property name="text">
+      <string>3.0</string>
+     </property>
+    </item>
+    <item row="10" column="0">
+     <property name="text">
+      <string>3.2</string>
+     </property>
+    </item>
+    <item row="10" column="1">
+     <property name="text">
+      <string>3.4</string>
+     </property>
+    </item>
+    <item row="11" column="0">
+     <property name="text">
+      <string>3.5</string>
+     </property>
+    </item>
+    <item row="11" column="1">
+     <property name="text">
+      <string>4.0</string>
+     </property>
+    </item>
+    <item row="12" column="0">
+     <property name="text">
+      <string>4.7</string>
+     </property>
+    </item>
+    <item row="12" column="1">
+     <property name="text">
+      <string>4.7</string>
+     </property>
+    </item>
+    <item row="13" column="0">
+     <property name="text">
+      <string>5.7</string>
+     </property>
+    </item>
+    <item row="13" column="1">
+     <property name="text">
+      <string>4.6</string>
+     </property>
+    </item>
+    <item row="14" column="0">
+     <property name="text">
+      <string>7.5</string>
+     </property>
+    </item>
+    <item row="14" column="1">
+     <property name="text">
+      <string>6.6</string>
+     </property>
+    </item>
+    <item row="15" column="0">
+     <property name="text">
+      <string>6.7</string>
+     </property>
+    </item>
+    <item row="15" column="1">
+     <property name="text">
+      <string>6.0</string>
+     </property>
+    </item>
+    <item row="16" column="0">
+     <property name="text">
+      <string>2.8</string>
+     </property>
+    </item>
+    <item row="16" column="1">
+     <property name="text">
+      <string>2.3</string>
+     </property>
+    </item>
+    <item row="17" column="0">
+     <property name="text">
+      <string>3.1</string>
+     </property>
+    </item>
+    <item row="17" column="1">
+     <property name="text">
+      <string>3.0</string>
+     </property>
+    </item>
+    <item row="18" column="0">
+     <property name="text">
+      <string>3.6</string>
+     </property>
+    </item>
+    <item row="18" column="1">
+     <property name="text">
+      <string>3.4</string>
+     </property>
+    </item>
+    <item row="19" column="0">
+     <property name="text">
+      <string>4.6</string>
+     </property>
+    </item>
+    <item row="19" column="1">
+     <property name="text">
+      <string>4.6</string>
+     </property>
+    </item>
+    <item row="20" column="0">
+     <property name="text">
+      <string>4.9</string>
+     </property>
+    </item>
+    <item row="20" column="1">
+     <property name="text">
+      <string>4.9</string>
+     </property>
+    </item>
+    <item row="21" column="0">
+     <property name="text">
+      <string>1.5</string>
+     </property>
+    </item>
+    <item row="21" column="1">
+     <property name="text">
+      <string>1.7</string>
+     </property>
+    </item>
+    <item row="22" column="0">
+     <property name="text">
+      <string>1.7</string>
+     </property>
+    </item>
+    <item row="22" column="1">
+     <property name="text">
+      <string>1.5</string>
+     </property>
+    </item>
+    <item row="23" column="0">
+     <property name="text">
+      <string>2.2</string>
+     </property>
+    </item>
+    <item row="23" column="1">
+     <property name="text">
+      <string>2.2</string>
+     </property>
+    </item>
+    <item row="24" column="0">
+     <property name="text">
+      <string>2.2</string>
+     </property>
+    </item>
+    <item row="24" column="1">
+     <property name="text">
+      <string>2.2</string>
+     </property>
+    </item>
+    <item row="25" column="0">
+     <property name="text">
+      <string>3.8</string>
+     </property>
+    </item>
+    <item row="25" column="1">
+     <property name="text">
+      <string>3.8</string>
+     </property>
+    </item>
+    <item row="26" column="0">
+     <property name="text">
+      <string>2.6</string>
+     </property>
+    </item>
+    <item row="26" column="1">
+     <property name="text">
+      <string>2.6</string>
+     </property>
+    </item>
+    <item row="27" column="0">
+     <property name="text">
+      <string>1.6</string>
+     </property>
+    </item>
+    <item row="27" column="1">
+     <property name="text">
+      <string>1.6</string>
+     </property>
+    </item>
+    <item row="28" column="0">
+     <property name="text">
+      <string>3.3</string>
+     </property>
+    </item>
+    <item row="28" column="1">
+     <property name="text">
+      <string>3.3</string>
+     </property>
+    </item>
+    <item row="29" column="0">
+     <property name="text">
+      <string>1.6</string>
+     </property>
+    </item>
+    <item row="29" column="1">
+     <property name="text">
+      <string>1.6</string>
+     </property>
+    </item>
+    <item row="30" column="0">
+     <property name="text">
+      <string>1.9</string>
+     </property>
+    </item>
+    <item row="30" column="1">
+     <property name="text">
+      <string>1.8</string>
+     </property>
+    </item>
+    <item row="31" column="0">
+     <property name="text">
+      <string>2.8</string>
+     </property>
+    </item>
+    <item row="31" column="1">
+     <property name="text">
+      <string>2.5</string>
+     </property>
+    </item>
+    <item row="32" column="0">
+     <property name="text">
+      <string>1.6</string>
+     </property>
+    </item>
+    <item row="32" column="1">
+     <property name="text">
+      <string>1.6</string>
+     </property>
+    </item>
+    <item row="33" column="0">
+     <property name="text">
+      <string>2.3</string>
+     </property>
+    </item>
+    <item row="33" column="1">
+     <property name="text">
+      <string>2.3</string>
+     </property>
+    </item>
+    <item row="34" column="0">
+     <property name="text">
+      <string>1.8</string>
+     </property>
+    </item>
+    <item row="34" column="1">
+     <property name="text">
+      <string>1.8</string>
+     </property>
+    </item>
+    <item row="35" column="0">
+     <property name="text">
+      <string>2.0</string>
+     </property>
+    </item>
+    <item row="35" column="1">
+     <property name="text">
+      <string>2.0</string>
+     </property>
+    </item>
+    <item row="36" column="0">
+     <property name="text">
+      <string>2.2</string>
+     </property>
+    </item>
+    <item row="36" column="1">
+     <property name="text">
+      <string>2.2</string>
+     </property>
+    </item>
+    <item row="37" column="0">
+     <property name="text">
+      <string>2.6</string>
+     </property>
+    </item>
+    <item row="37" column="1">
+     <property name="text">
+      <string>2.6</string>
+     </property>
+    </item>
+    <item row="38" column="0">
+     <property name="text">
+      <string>2.1</string>
+     </property>
+    </item>
+    <item row="38" column="1">
+     <property name="text">
+      <string>2.1</string>
+     </property>
+    </item>
+    <item row="39" column="0">
+     <property name="text">
+      <string>7.7</string>
+     </property>
+    </item>
+    <item row="39" column="1">
+     <property name="text">
+      <string>7.7</string>
+     </property>
+    </item>
+    <item row="40" column="0">
+     <property name="text">
+      <string>7.1</string>
+     </property>
+    </item>
+    <item row="40" column="1">
+     <property name="text">
+      <string>7.1</string>
+     </property>
+    </item>
+    <item row="41" column="0">
+     <property name="text">
+      <string>8.7</string>
+     </property>
+    </item>
+    <item row="41" column="1">
+     <property name="text">
+      <string>8.7</string>
+     </property>
+    </item>
+    <item row="42" column="0">
+     <property name="text">
+      <string>6.9</string>
+     </property>
+    </item>
+    <item row="42" column="1">
+     <property name="text">
+      <string>6.9</string>
+     </property>
+    </item>
+    <item row="43" column="0">
+     <property name="text">
+      <string>13.5</string>
+     </property>
+    </item>
+    <item row="43" column="1">
+     <property name="text">
+      <string>13.5</string>
+     </property>
+    </item>
+    <item row="44" column="0">
+     <property name="text">
+      <string>11.0</string>
+     </property>
+    </item>
+    <item row="44" column="1">
+     <property name="text">
+      <string>11.0</string>
+     </property>
+    </item>
+    <item row="45" column="0">
+     <property name="text">
+      <string>1.9</string>
+     </property>
+    </item>
+    <item row="45" column="1">
+     <property name="text">
+      <string>1.9</string>
+     </property>
+    </item>
+    <item row="46" column="0">
+     <property name="text">
+      <string>4.1</string>
+     </property>
+    </item>
+    <item row="46" column="1">
+     <property name="text">
+      <string>4.1</string>
+     </property>
+    </item>
+    <item row="47" column="0">
+     <property name="text">
+      <string>1.7</string>
+     </property>
+    </item>
+    <item row="47" column="1">
+     <property name="text">
+      <string>1.7</string>
+     </property>
+    </item>
+    <item row="48" column="0">
+     <property name="text">
+      <string>3.3</string>
+     </property>
+    </item>
+    <item row="48" column="1">
+     <property name="text">
+      <string>3.3</string>
+     </property>
+    </item>
+    <item row="49" column="0">
+     <property name="text">
+      <string>4.8</string>
+     </property>
+    </item>
+    <item row="49" column="1">
+     <property name="text">
+      <string>4.8</string>
+     </property>
+    </item>
+    <item row="50" column="0">
+     <property name="text">
+      <string>4.4</string>
+     </property>
+    </item>
+    <item row="50" column="1">
+     <property name="text">
+      <string>4.4</string>
+     </property>
+    </item>
+    <item row="51" column="0">
+     <property name="text">
+      <string>4.8</string>
+     </property>
+    </item>
+    <item row="51" column="1">
+     <property name="text">
+      <string>4.8</string>
+     </property>
+    </item>
+    <item row="52" column="0">
+     <property name="text">
+      <string>4</string>
+     </property>
+    </item>
+    <item row="52" column="1">
+     <property name="text">
+      <string>4</string>
+     </property>
+    </item>
+    <item row="53" column="0">
+     <property name="text">
+      <string>3.2</string>
+     </property>
+    </item>
+    <item row="53" column="1">
+     <property name="text">
+      <string>3.2</string>
+     </property>
+    </item>
+    <item row="54" column="0">
+     <property name="text">
+      <string>5.2</string>
+     </property>
+    </item>
+    <item row="54" column="1">
+     <property name="text">
+      <string>5.2</string>
+     </property>
+    </item>
+    <item row="55" column="0">
+     <property name="text">
+      <string>7.4</string>
+     </property>
+    </item>
+    <item row="55" column="1">
+     <property name="text">
+      <string>7.4</string>
+     </property>
+    </item>
+    <item row="56" column="0">
+     <property name="text">
+      <string>5.8</string>
+     </property>
+    </item>
+    <item row="56" column="1">
+     <property name="text">
+      <string>5.8</string>
+     </property>
+    </item>
+    <item row="57" column="0">
+     <property name="text">
+      <string>8.4</string>
+     </property>
+    </item>
+    <item row="57" column="1">
+     <property name="text">
+      <string>8.4</string>
+     </property>
+    </item>
+    <item row="58" column="0">
+     <property name="text">
+      <string>11.4</string>
+     </property>
+    </item>
+    <item row="58" column="1">
+     <property name="text">
+      <string>11.4</string>
+     </property>
+    </item>
+    <item row="59" column="0">
+     <property name="text">
+      <string>14.4</string>
+     </property>
+    </item>
+    <item row="59" column="1">
+     <property name="text">
+      <string>14.4</string>
+     </property>
+    </item>
+    <item row="60" column="0">
+     <property name="text">
+      <string>3.8</string>
+     </property>
+    </item>
+    <item row="60" column="1">
+     <property name="text">
+      <string>3.8</string>
+     </property>
+    </item>
+   </widget>
+   <zorder>tableWidget</zorder>
+   <zorder>tabWidget</zorder>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

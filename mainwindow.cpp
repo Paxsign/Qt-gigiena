@@ -16,6 +16,8 @@ MainWindow::MainWindow(QWidget *parent) :
     kkal_perekus=0;
     kkal_zavtrak=0;
 
+    ui->tableWidget->hide();
+
     csvModel = new QStandardItemModel(this);
     csvModel->setColumnCount(10);
     csvModel->setHorizontalHeaderLabels(QStringList() <<"Продукт"<<"животн_белки"<<"растит_белки"<<"животн_жир"<<"растит_жир"<<"углеводы"<<"Ca"<<"P"<<"ккал"<<"С");
@@ -80,12 +82,18 @@ void MainWindow::on_pushButton_clicked()
 }
 
 void MainWindow::on_pushButton_3_clicked()
-{
-    qDebug()<<sum;
+{int hh;
+    if (ui->zen->isChecked()){ hh=1; }
+    if (ui->muz->isChecked()){ hh=0; }
+    double ff = (ui->voo->text().toDouble())*(ui->time->text().toDouble())*ui->tableWidget->item(ui->sp_deistviya->currentIndex()-1,hh)->text().toDouble();
+    //qDebug()<<ui->tableWidget->takeItem(ui->sp_deistviya->currentIndex(),0)->text().toDouble();
+    qDebug()<<ff;
+
+    //qDebug()<<sum;
     QHBoxLayout *layout = new QHBoxLayout(this);
     QLineEdit *lnd1 = new QLineEdit(ui->sp_deistviya->currentText());
     QLineEdit *lnd2 = new QLineEdit(ui->time->text());
-    QLineEdit *lnd3 = new QLineEdit("12345");
+    QLineEdit *lnd3 = new QLineEdit(QString::number(ff));
     layout->addWidget(lnd1,8);
     layout->addWidget(lnd2,2);
     layout->addWidget(lnd3,2);
