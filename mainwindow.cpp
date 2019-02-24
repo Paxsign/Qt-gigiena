@@ -10,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     sum=0;
+    belki=0;
     kkal=0;
     kkal_obed=0;
     kkal_uzin=0;
@@ -170,10 +171,17 @@ void MainWindow::on_pushButton_2_clicked()
             kkal_perekus=kkal_perekus + ((lbl8->text().toFloat()/100)*ui->prod_kolvo->text().toFloat());
         };
 
+        belki=belki + lbl2->text().toFloat()+lbl1->text().toFloat();
+        qDebug()<<belki;
         kkal =kkal + ((lbl8->text().toFloat()/100)*ui->prod_kolvo->text().toFloat()); // сумма калорий (kkal обьявлен в заголовочном файле как float)
         ui->sum_kalori->setText(QString::number(kkal));
         ui->kkal_zav->setText(QString::number(kkal_zavtrak));
         ui->kkal_obed->setText(QString::number(kkal_obed));
         ui->kkal_uzin->setText(QString::number(kkal_uzin));
         ui->kkal_perekus->setText(QString::number(kkal_perekus));
+}
+
+void MainWindow::on_pushButton_4_clicked()
+{qDebug()<<QString::number(belki);
+    ui->tableWidget_2->item(2,2)->setText("->setText(QString::number(belki)");
 }

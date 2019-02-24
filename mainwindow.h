@@ -23,10 +23,13 @@ private slots:
 
     void on_pushButton_2_clicked();
 
+    void on_pushButton_4_clicked();
+
 private:
     Ui::MainWindow *ui;
     double sum;
     QStandardItemModel *csvModel;
+    float belki;
     float kkal;
     float kkal_zavtrak;
     float kkal_obed;
