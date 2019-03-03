@@ -29,12 +29,14 @@ private:
     Ui::MainWindow *ui;
     double sum;
     QStandardItemModel *csvModel;
-    float belki;
+    float belki, zhir, uglevod,zhiv_belk,rast_zhir ;
+    float Ca, P, vC;
     float kkal;
     float kkal_zavtrak;
     float kkal_obed;
     float kkal_uzin;
     float kkal_perekus;
+    float ub,zb;
 };
 
 #endif // MAINWINDOW_H

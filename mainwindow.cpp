@@ -9,8 +9,15 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    uglevod=0;
     sum=0;
     belki=0;
+    zhiv_belk=0;
+    zhir=0;
+    rast_zhir=0;
+    Ca=0;
+    P=0;
+    vC=0;
     kkal=0;
     kkal_obed=0;
     kkal_uzin=0;
@@ -171,8 +178,18 @@ void MainWindow::on_pushButton_2_clicked()
             kkal_perekus=kkal_perekus + ((lbl8->text().toFloat()/100)*ui->prod_kolvo->text().toFloat());
         };
 
+        rast_zhir=rast_zhir + lbl4->text().toFloat();
+        zhiv_belk=zhiv_belk + lbl1->text().toFloat();
         belki=belki + lbl2->text().toFloat()+lbl1->text().toFloat();
-        qDebug()<<belki;
+        uglevod=uglevod + lbl5->text().toFloat();
+        zhir=zhir + lbl3->text().toFloat()+lbl4->text().toFloat();
+        Ca=Ca + lbl6->text().toFloat();
+        P=P + lbl7->text().toFloat();
+        vC=vC + lbl9->text().toFloat();
+
+         zb = zhir/belki;
+         ub = uglevod/belki;
+
         kkal =kkal + ((lbl8->text().toFloat()/100)*ui->prod_kolvo->text().toFloat()); // сумма калорий (kkal обьявлен в заголовочном файле как float)
         ui->sum_kalori->setText(QString::number(kkal));
         ui->kkal_zav->setText(QString::number(kkal_zavtrak));
@@ -183,5 +200,41 @@ void MainWindow::on_pushButton_2_clicked()
 
 void MainWindow::on_pushButton_4_clicked()
 {qDebug()<<QString::number(belki);
-    ui->tableWidget_2->item(2,2)->setText("->setText(QString::number(belki)");
+    QTableWidgetItem* uglev=new QTableWidgetItem;
+    QTableWidgetItem* belk=new QTableWidgetItem;
+    QTableWidgetItem* zhirr=new QTableWidgetItem;
+    QTableWidgetItem* Calc=new QTableWidgetItem;
+    QTableWidgetItem* Phos=new QTableWidgetItem;
+    QTableWidgetItem* vitC=new QTableWidgetItem;
+    QTableWidgetItem* kratnost=new QTableWidgetItem;
+    QTableWidgetItem* promez=new QTableWidgetItem;
+    QTableWidgetItem* zhivkbel=new QTableWidgetItem;
+    QTableWidgetItem* bel_kkal=new QTableWidgetItem;
+    QTableWidgetItem* rastkzhir=new QTableWidgetItem;
+    QTableWidgetItem* sootn=new QTableWidgetItem;
+    belk->setText(QString::number(belki));
+    ui->tableWidget_2->setItem(1,0,belk);
+    uglev->setText(QString::number(uglevod));
+    ui->tableWidget_2->setItem(9,0,uglev);
+    zhirr->setText(QString::number(zhir));
+    ui->tableWidget_2->setItem(5,0,zhirr);
+    Calc->setText(QString::number(Ca));
+    ui->tableWidget_2->setItem(13,0,Calc);
+    Phos->setText(QString::number(P));
+    ui->tableWidget_2->setItem(14,0,Phos);
+    vitC->setText(QString::number(vC));
+    ui->tableWidget_2->setItem(15,0,vitC);
+    kratnost->setText(ui->lineEdit->text());
+    ui->tableWidget_2->setItem(17,0,kratnost);
+    promez->setText(ui->lineEdit_2->text());
+    ui->tableWidget_2->setItem(18,0,promez);
+    zhivkbel->setText(QString::number(zhiv_belk/belki));
+    ui->tableWidget_2->setItem(2,0,zhivkbel);
+    rastkzhir->setText(QString::number(rast_zhir/zhir));
+    ui->tableWidget_2->setItem(6,0,rastkzhir);
+    bel_kkal->setText(QString::number(belki*4*100));
+    ui->tableWidget_2->setItem(3,0,bel_kkal);
+    QString fff="1:" + QString::number(zb,'f',2)+':'+QString::number(ub,'f',2);
+    sootn->setText(fff);
+    ui->tableWidget_2->setItem(11,0,sootn);
 }
