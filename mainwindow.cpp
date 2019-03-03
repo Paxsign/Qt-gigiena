@@ -210,6 +210,8 @@ void MainWindow::on_pushButton_4_clicked()
     QTableWidgetItem* promez=new QTableWidgetItem;
     QTableWidgetItem* zhivkbel=new QTableWidgetItem;
     QTableWidgetItem* bel_kkal=new QTableWidgetItem;
+    QTableWidgetItem* ugl_kkal=new QTableWidgetItem;
+    QTableWidgetItem* zhir_kkal=new QTableWidgetItem;
     QTableWidgetItem* rastkzhir=new QTableWidgetItem;
     QTableWidgetItem* sootn=new QTableWidgetItem;
     belk->setText(QString::number(belki));
@@ -228,12 +230,16 @@ void MainWindow::on_pushButton_4_clicked()
     ui->tableWidget_2->setItem(17,0,kratnost);
     promez->setText(ui->lineEdit_2->text());
     ui->tableWidget_2->setItem(18,0,promez);
-    zhivkbel->setText(QString::number(zhiv_belk/belki));
+    zhivkbel->setText(QString::number((zhiv_belk/belki)*100));
     ui->tableWidget_2->setItem(2,0,zhivkbel);
-    rastkzhir->setText(QString::number(rast_zhir/zhir));
+    rastkzhir->setText(QString::number((rast_zhir/zhir)*100));
     ui->tableWidget_2->setItem(6,0,rastkzhir);
-    bel_kkal->setText(QString::number(belki*4*100));
+    bel_kkal->setText(QString::number((belki*4*100)/kkal));
     ui->tableWidget_2->setItem(3,0,bel_kkal);
+    ugl_kkal->setText(QString::number((uglevod*4*100)/kkal));
+    ui->tableWidget_2->setItem(10,0,ugl_kkal);
+    zhir_kkal->setText(QString::number((zhir*9*100)/kkal));
+    ui->tableWidget_2->setItem(7,0,zhir_kkal);
     QString fff="1:" + QString::number(zb,'f',2)+':'+QString::number(ub,'f',2);
     sootn->setText(fff);
     ui->tableWidget_2->setItem(11,0,sootn);

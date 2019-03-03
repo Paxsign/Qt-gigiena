@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>770</width>
-    <height>579</height>
+    <width>838</width>
+    <height>627</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,12 +19,12 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>751</width>
-      <height>571</height>
+      <width>831</width>
+      <height>621</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -678,9 +678,9 @@
      <widget class="QLineEdit" name="produkt">
       <property name="geometry">
        <rect>
-        <x>20</x>
+        <x>0</x>
         <y>40</y>
-        <width>113</width>
+        <width>181</width>
         <height>25</height>
        </rect>
       </property>
@@ -688,7 +688,7 @@
      <widget class="QLineEdit" name="prod_kolvo">
       <property name="geometry">
        <rect>
-        <x>160</x>
+        <x>190</x>
         <y>40</y>
         <width>113</width>
         <height>25</height>
@@ -1042,10 +1042,10 @@
      <widget class="QTableWidget" name="tableWidget_2">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>50</y>
-        <width>721</width>
-        <height>521</height>
+        <x>0</x>
+        <y>40</y>
+        <width>821</width>
+        <height>551</height>
        </rect>
       </property>
       <property name="wordWrap">
