@@ -25,9 +25,11 @@ private slots:
 
     void on_pushButton_4_clicked();
 
+    void on_pushButton_5_clicked();
+
 private:
     Ui::MainWindow *ui;
-    double sum;
+    double sum,sum_time;
     QStandardItemModel *csvModel;
     float belki, zhir, uglevod,zhiv_belk,rast_zhir ;
     float Ca, P, vC;

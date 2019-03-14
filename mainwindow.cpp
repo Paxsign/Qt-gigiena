@@ -10,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     uglevod=0;
+    sum_time=0;
     sum=0;
     belki=0;
     zhiv_belk=0;
@@ -93,7 +94,7 @@ void MainWindow::on_pushButton_3_clicked()
 {int hh;
     if (ui->zen->isChecked()){ hh=1; }
     if (ui->muz->isChecked()){ hh=0; }
-    double ff = (ui->voo->text().toDouble())*(ui->time->text().toDouble())*ui->tableWidget->item(ui->sp_deistviya->currentIndex()-1,hh)->text().toDouble();
+    double ff = (ui->voo->text().toDouble()/24)*(ui->time->text().toDouble())*ui->tableWidget->item(ui->sp_deistviya->currentIndex()-1,hh)->text().toDouble();
     //qDebug()<<ui->tableWidget->takeItem(ui->sp_deistviya->currentIndex(),0)->text().toDouble();
     qDebug()<<ff;
 
@@ -109,6 +110,8 @@ void MainWindow::on_pushButton_3_clicked()
     ui->verticalLayout_7->addLayout(layout);
     ui->verticalLayout_7->setAlignment(Qt::AlignTop);
     sum = lnd3->text().toDouble()+sum;
+    sum_time = sum_time+ui->time->text().toFloat();
+    ui->sum_time->setText(QString::number(sum_time));
     ui->summa_kalori_potrach->setText(QString::number(sum));
 
 }
@@ -148,22 +151,32 @@ void MainWindow::on_pushButton_2_clicked()
         QLabel *lbl8 = new QLabel(csvModel->item(num,8)->text() , this);
         QLabel *lbl9 = new QLabel(csvModel->item(num,9)->text() , this);
         lbl->setWordWrap(true);
-        layout->addWidget(lbl);                     //запихиваем лабель в горизонтальный слой
-        layout->addWidget(lbl1);
-        layout->addWidget(lbl2);
-        layout->addWidget(lbl3);
-        layout->addWidget(lbl4);
-        layout->addWidget(lbl5);
-        layout->addWidget(lbl6);
-        layout->addWidget(lbl7);
-        layout->addWidget(lbl8);
-        layout->addWidget(lbl9);
+        layout->addWidget(lbl,5);                     //запихиваем лабель в горизонтальный слой
+        layout->addWidget(lbl1,3);
+        layout->addWidget(lbl2,3);
+        layout->addWidget(lbl3,3);
+        layout->addWidget(lbl4,3);
+        layout->addWidget(lbl5,3);
+        layout->addWidget(lbl6,2);
+        layout->addWidget(lbl7,2);
+        layout->addWidget(lbl8,2);
+        layout->addWidget(lbl9,2);
+
+        //layout->setStretch(0,5);
+        //layout->setStretch(1,3);
+        //layout->setStretch(2,3);
+        //layout->setStretch(3,3);
+        //layout->setStretch(4,3);
+        //layout->setStretch(5,3);
+        //layout->setStretch(6,2);
+        //layout->setStretch(7,2);
+        //layout->setStretch(8,2);
+        //layout->setStretch(9,2);
+
         eda->addLayout(layout); //запихиваем горизонтальный слой в вертикальный созданнвй в дизайнере
         eda->setAlignment(Qt::AlignTop);
-        eda->setSpacing(15);
-        eda->setStretch(7,2);
-        eda->setStretch(8,2);
-        eda->setStretch(9,2);
+        eda->setSpacing(10);
+
 
         if (ui->zavtrak->isChecked()){
            kkal_zavtrak=kkal_zavtrak + ((lbl8->text().toFloat()/100)*ui->prod_kolvo->text().toFloat());
@@ -243,4 +256,131 @@ void MainWindow::on_pushButton_4_clicked()
     QString fff="1:" + QString::number(zb,'f',2)+':'+QString::number(ub,'f',2);
     sootn->setText(fff);
     ui->tableWidget_2->setItem(11,0,sootn);
+
+
+
+    if (ui->tableWidget_2->item(2,0)->text().toFloat()>55) {
+        QTableWidgetItem* itog_bel=new QTableWidgetItem;
+        itog_bel->setText("выше нормы");
+        ui->tableWidget_2->setItem(2,2,itog_bel);
+    }
+   else if (ui->tableWidget_2->item(2,0)->text().toFloat()<55) {
+        QTableWidgetItem* itog_bel=new QTableWidgetItem;
+        itog_bel->setText("меньше нормы");
+        ui->tableWidget_2->setItem(2,2,itog_bel);
+    }
+    else {
+        QTableWidgetItem* itog_bel=new QTableWidgetItem;
+        itog_bel->setText("норма");
+        ui->tableWidget_2->setItem(2,2,itog_bel);
+    }
+
+    if(ui->tableWidget_2->item(3,0)->text().toFloat()>14){
+        QTableWidgetItem* itog_belkkal=new QTableWidgetItem;
+        itog_belkkal->setText("выше нормы");
+        ui->tableWidget_2->setItem(3,2,itog_belkkal);
+    }
+    else if(ui->tableWidget_2->item(3,0)->text().toFloat()<11){
+        QTableWidgetItem* itog_belkkal=new QTableWidgetItem;
+        itog_belkkal->setText("меньше нормы");
+        ui->tableWidget_2->setItem(3,2,itog_belkkal);
+    }
+    else {
+        QTableWidgetItem* itog_belkkal=new QTableWidgetItem;
+        itog_belkkal->setText("норма");
+        ui->tableWidget_2->setItem(3,2,itog_belkkal);
+    }
+
+    if(ui->tableWidget_2->item(6,0)->text().toFloat()>30){
+        QTableWidgetItem* itog_zhir=new QTableWidgetItem;
+        itog_zhir->setText("больше нормы");
+        ui->tableWidget_2->setItem(6,2,itog_zhir);
+    }
+    else if (ui->tableWidget_2->item(6,0)->text().toFloat()<25) {
+        QTableWidgetItem* itog_zhir=new QTableWidgetItem;
+        itog_zhir->setText("меньше нормы");
+        ui->tableWidget_2->setItem(6,2,itog_zhir);
+    }
+    else {
+        QTableWidgetItem* itog_zhir=new QTableWidgetItem;
+        itog_zhir->setText("норма");
+        ui->tableWidget_2->setItem(6,2,itog_zhir);
+    }
+
+    if(ui->tableWidget_2->item(7,0)->text().toFloat()>35){
+        QTableWidgetItem* itog_zhirkkal=new QTableWidgetItem;
+        itog_zhirkkal->setText("больше нормы");
+        ui->tableWidget_2->setItem(7,2,itog_zhirkkal);
+    }
+    else if (ui->tableWidget_2->item(7,0)->text().toFloat()<30) {
+        QTableWidgetItem* itog_zhirkkal=new QTableWidgetItem;
+        itog_zhirkkal->setText("меньше нормы");
+        ui->tableWidget_2->setItem(7,2,itog_zhirkkal);
+    }
+    else {
+        QTableWidgetItem* itog_zhirkkal=new QTableWidgetItem;
+        itog_zhirkkal->setText("норма");
+        ui->tableWidget_2->setItem(7,2,itog_zhirkkal);
+    }
+
+    if(ui->tableWidget_2->item(10,0)->text().toFloat()>56){
+        QTableWidgetItem* itog_ugl=new QTableWidgetItem;
+        itog_ugl->setText("больше нормы");
+        ui->tableWidget_2->setItem(10,2,itog_ugl);
+    }
+    else if (ui->tableWidget_2->item(10,0)->text().toFloat()<30) {
+        QTableWidgetItem* itog_ugl=new QTableWidgetItem;
+        itog_ugl->setText("меньше нормы");
+        ui->tableWidget_2->setItem(10,2,itog_ugl);
+    }
+    else {
+        QTableWidgetItem* itog_ugl=new QTableWidgetItem;
+        itog_ugl->setText("норма");
+        ui->tableWidget_2->setItem(10,2,itog_ugl);
+    }
+
+    if(ui->tableWidget_2->item(13,0)->text().toFloat()<1000){
+        QTableWidgetItem* itog_Ca=new QTableWidgetItem;
+        itog_Ca->setText("меньше нормы");
+        ui->tableWidget_2->setItem(13,2,itog_Ca);
+    }
+    else {
+        QTableWidgetItem* itog_Ca=new QTableWidgetItem;
+        itog_Ca->setText("норма");
+        ui->tableWidget_2->setItem(13,2,itog_Ca);
+    }
+    if(ui->tableWidget_2->item(14,0)->text().toFloat()<800){
+        QTableWidgetItem* itog_P=new QTableWidgetItem;
+        itog_P->setText("меньше нормы");
+        ui->tableWidget_2->setItem(14,2,itog_P);
+    }
+    else {
+        QTableWidgetItem* itog_P=new QTableWidgetItem;
+        itog_P->setText("норма");
+        ui->tableWidget_2->setItem(14,2,itog_P);
+    }
+    if(ui->tableWidget_2->item(15,0)->text().toFloat()<90){
+        QTableWidgetItem* itog_C=new QTableWidgetItem;
+        itog_C->setText("меньше нормы");
+        ui->tableWidget_2->setItem(15,2,itog_C);
+    }
+    else {
+        QTableWidgetItem* itog_C=new QTableWidgetItem;
+        itog_C->setText("норма");
+        ui->tableWidget_2->setItem(15,2,itog_C);
+    }
+}
+
+void MainWindow::on_pushButton_5_clicked()
+{
+
+        QHBoxLayout *layout = new QHBoxLayout(this);
+         QLabel *lbl = new QLabel("123333333333333333333333" , this);
+         QLabel *lbl1 = new QLabel("12366666 66666666666666" , this);
+         layout->addWidget(lbl,1);
+         layout->addWidget(lbl1,0);
+        ui->verticalLayout_11->addLayout(layout);
+        ui->verticalLayout_11->setAlignment(Qt::AlignTop);
+
+
 }
