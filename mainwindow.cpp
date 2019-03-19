@@ -162,17 +162,6 @@ void MainWindow::on_pushButton_2_clicked()
         layout->addWidget(lbl8,2);
         layout->addWidget(lbl9,2);
 
-        //layout->setStretch(0,5);
-        //layout->setStretch(1,3);
-        //layout->setStretch(2,3);
-        //layout->setStretch(3,3);
-        //layout->setStretch(4,3);
-        //layout->setStretch(5,3);
-        //layout->setStretch(6,2);
-        //layout->setStretch(7,2);
-        //layout->setStretch(8,2);
-        //layout->setStretch(9,2);
-
         eda->addLayout(layout); //запихиваем горизонтальный слой в вертикальный созданнвй в дизайнере
         eda->setAlignment(Qt::AlignTop);
         eda->setSpacing(10);
@@ -209,6 +198,9 @@ void MainWindow::on_pushButton_2_clicked()
         ui->kkal_obed->setText(QString::number(kkal_obed));
         ui->kkal_uzin->setText(QString::number(kkal_uzin));
         ui->kkal_perekus->setText(QString::number(kkal_perekus));
+
+        ui->produkt->clear();
+        ui->prod_kolvo->clear();
 }
 
 void MainWindow::on_pushButton_4_clicked()
@@ -383,4 +375,134 @@ void MainWindow::on_pushButton_5_clicked()
         ui->verticalLayout_11->setAlignment(Qt::AlignTop);
 
 
+}
+
+void MainWindow::on_pushButton_6_clicked()
+{
+    QVBoxLayout *eda;
+
+    if (ui->zavtrak->isChecked()){
+        eda=ui->verticalLayout_2;
+    };
+    if (ui->obed->isChecked()){
+        eda=ui->verticalLayout_8;
+    };
+    if (ui->uzin->isChecked()){
+        eda=ui->verticalLayout_9;
+    };
+    if (ui->perekus->isChecked()){
+        eda=ui->verticalLayout_10;
+    };
+
+
+    QHBoxLayout *layout = new QHBoxLayout(this);    // создание горизонтального слоя QHBox (вертикальный QVBox)
+        QLabel *lbl = new QLabel(ui->produkt_svoi->text() , this);  //создание лабеля
+        QLabel *lbl1 = new QLabel(ui->prod_kolvo_svoi_2->text() , this);
+        QLabel *lbl2 = new QLabel(ui->prod_kolvo_svoi_3->text() , this);
+        QLabel *lbl3 = new QLabel(ui->prod_kolvo_svoi_4->text() , this);
+        QLabel *lbl4 = new QLabel(ui->prod_kolvo_svoi_5->text() , this);
+        QLabel *lbl5 = new QLabel(ui->prod_kolvo_svoi_6->text() , this);
+        QLabel *lbl6 = new QLabel(ui->prod_kolvo_svoi_7->text() , this);
+        QLabel *lbl7 = new QLabel(ui->prod_kolvo_svoi_8->text() , this);
+        QLabel *lbl8 = new QLabel(ui->prod_kolvo_svoi_9->text() , this);
+        QLabel *lbl9 = new QLabel(ui->prod_kolvo_svoi_10->text() , this);
+        lbl->setWordWrap(true);
+        layout->addWidget(lbl,5);                     //запихиваем лабель в горизонтальный слой
+        layout->addWidget(lbl1,3);
+        layout->addWidget(lbl2,3);
+        layout->addWidget(lbl3,3);
+        layout->addWidget(lbl4,3);
+        layout->addWidget(lbl5,3);
+        layout->addWidget(lbl6,2);
+        layout->addWidget(lbl7,2);
+        layout->addWidget(lbl8,2);
+        layout->addWidget(lbl9,2);
+
+        eda->addLayout(layout); //запихиваем горизонтальный слой в вертикальный созданнвй в дизайнере
+        eda->setAlignment(Qt::AlignTop);
+        eda->setSpacing(10);
+
+
+        if (ui->zavtrak->isChecked()){
+           kkal_zavtrak=kkal_zavtrak + ((lbl8->text().toFloat()/100)*ui->prod_kolvo_svoi->text().toFloat());
+        };
+        if (ui->obed->isChecked()){
+           kkal_obed=kkal_obed + ((lbl8->text().toFloat()/100)*ui->prod_kolvo_svoi->text().toFloat());
+        };
+        if (ui->uzin->isChecked()){
+            kkal_uzin=kkal_uzin + ((lbl8->text().toFloat()/100)*ui->prod_kolvo_svoi->text().toFloat());
+        };
+        if (ui->perekus->isChecked()){
+            kkal_perekus=kkal_perekus + ((lbl8->text().toFloat()/100)*ui->prod_kolvo_svoi->text().toFloat());
+        };
+
+        rast_zhir=rast_zhir + lbl4->text().toFloat();
+        zhiv_belk=zhiv_belk + lbl1->text().toFloat();
+        belki=belki + lbl2->text().toFloat()+lbl1->text().toFloat();
+        uglevod=uglevod + lbl5->text().toFloat();
+        zhir=zhir + lbl3->text().toFloat()+lbl4->text().toFloat();
+        Ca=Ca + lbl6->text().toFloat();
+        P=P + lbl7->text().toFloat();
+        vC=vC + lbl9->text().toFloat();
+
+         zb = zhir/belki;
+         ub = uglevod/belki;
+
+        kkal =kkal + ((lbl8->text().toFloat()/100)*ui->prod_kolvo_svoi->text().toFloat()); // сумма калорий (kkal обьявлен в заголовочном файле как float)
+        ui->sum_kalori->setText(QString::number(kkal));
+        ui->kkal_zav->setText(QString::number(kkal_zavtrak));
+        ui->kkal_obed->setText(QString::number(kkal_obed));
+        ui->kkal_uzin->setText(QString::number(kkal_uzin));
+        ui->kkal_perekus->setText(QString::number(kkal_perekus));
+
+        ui->prod_kolvo_svoi->clear();
+        ui->produkt_svoi->clear();
+        ui->prod_kolvo_svoi_2->clear();
+        ui->prod_kolvo_svoi_3->clear();
+        ui->prod_kolvo_svoi_4->clear();
+        ui->prod_kolvo_svoi_5->clear();
+        ui->prod_kolvo_svoi_6->clear();
+        ui->prod_kolvo_svoi_7->clear();
+        ui->prod_kolvo_svoi_8->clear();
+        ui->prod_kolvo_svoi_9->clear();
+        ui->prod_kolvo_svoi_10->clear();
+}
+
+void MainWindow::on_radioButton_2_clicked()
+{
+    ui->produkt->setEnabled(false);
+    ui->prod_kolvo->setEnabled(false);
+    ui->pushButton_2->setEnabled(false);
+    ui->pushButton_6->setEnabled(true);
+    ui->prod_kolvo_svoi->setEnabled(true);
+    ui->produkt_svoi->setEnabled(true);
+    ui->prod_kolvo_svoi_2->setEnabled(true);
+    ui->prod_kolvo_svoi_3->setEnabled(true);
+    ui->prod_kolvo_svoi_4->setEnabled(true);
+    ui->prod_kolvo_svoi_5->setEnabled(true);
+    ui->prod_kolvo_svoi_6->setEnabled(true);
+    ui->prod_kolvo_svoi_7->setEnabled(true);
+    ui->prod_kolvo_svoi_8->setEnabled(true);
+    ui->prod_kolvo_svoi_9->setEnabled(true);
+    ui->prod_kolvo_svoi_10->setEnabled(true);
+
+}
+
+void MainWindow::on_radioButton_clicked()
+{
+    ui->produkt->setEnabled(true);
+    ui->prod_kolvo->setEnabled(true);
+    ui->pushButton_2->setEnabled(true);
+    ui->produkt_svoi->setEnabled(false);
+    ui->pushButton_6->setEnabled(false);
+    ui->prod_kolvo_svoi->setEnabled(false);
+    ui->prod_kolvo_svoi_2->setEnabled(false);
+    ui->prod_kolvo_svoi_3->setEnabled(false);
+    ui->prod_kolvo_svoi_4->setEnabled(false);
+    ui->prod_kolvo_svoi_5->setEnabled(false);
+    ui->prod_kolvo_svoi_6->setEnabled(false);
+    ui->prod_kolvo_svoi_7->setEnabled(false);
+    ui->prod_kolvo_svoi_8->setEnabled(false);
+    ui->prod_kolvo_svoi_9->setEnabled(false);
+    ui->prod_kolvo_svoi_10->setEnabled(false);
 }

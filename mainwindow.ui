@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -775,7 +775,7 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>70</y>
+        <y>170</y>
         <width>911</width>
         <height>41</height>
        </rect>
@@ -875,7 +875,7 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>120</y>
+        <y>220</y>
         <width>67</width>
         <height>17</height>
        </rect>
@@ -888,7 +888,7 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>250</y>
+        <y>320</y>
         <width>67</width>
         <height>17</height>
        </rect>
@@ -901,7 +901,7 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>390</y>
+        <y>430</y>
         <width>67</width>
         <height>17</height>
        </rect>
@@ -914,7 +914,7 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>490</y>
+        <y>550</y>
         <width>67</width>
         <height>17</height>
        </rect>
@@ -940,7 +940,7 @@
       <property name="geometry">
        <rect>
         <x>80</x>
-        <y>120</y>
+        <y>220</y>
         <width>67</width>
         <height>17</height>
        </rect>
@@ -953,7 +953,7 @@
       <property name="geometry">
        <rect>
         <x>80</x>
-        <y>390</y>
+        <y>430</y>
         <width>67</width>
         <height>17</height>
        </rect>
@@ -966,7 +966,7 @@
       <property name="geometry">
        <rect>
         <x>80</x>
-        <y>490</y>
+        <y>550</y>
         <width>67</width>
         <height>17</height>
        </rect>
@@ -978,10 +978,10 @@
      <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>10</y>
-        <width>871</width>
-        <height>27</height>
+        <x>10</x>
+        <y>40</y>
+        <width>851</width>
+        <height>31</height>
        </rect>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="1,0,0,0,0,0,0">
@@ -989,7 +989,14 @@
         <widget class="QLineEdit" name="produkt"/>
        </item>
        <item>
-        <widget class="QLineEdit" name="prod_kolvo"/>
+        <widget class="QLineEdit" name="prod_kolvo">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="frame">
+          <bool>true</bool>
+         </property>
+        </widget>
        </item>
        <item>
         <widget class="QPushButton" name="pushButton_2">
@@ -1002,6 +1009,9 @@
         <widget class="QRadioButton" name="zavtrak">
          <property name="text">
           <string>Завтрак</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -1032,9 +1042,9 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>140</y>
+        <y>240</y>
         <width>911</width>
-        <height>101</height>
+        <height>81</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -1061,7 +1071,7 @@
          <x>0</x>
          <y>0</y>
          <width>895</width>
-         <height>99</height>
+         <height>79</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -1080,8 +1090,8 @@
      <widget class="QLabel" name="kkal_obed">
       <property name="geometry">
        <rect>
-        <x>70</x>
-        <y>250</y>
+        <x>60</x>
+        <y>320</y>
         <width>71</width>
         <height>16</height>
        </rect>
@@ -1094,9 +1104,9 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>270</y>
+        <y>340</y>
         <width>911</width>
-        <height>111</height>
+        <height>81</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -1123,7 +1133,7 @@
          <x>0</x>
          <y>0</y>
          <width>895</width>
-         <height>109</height>
+         <height>79</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -1137,9 +1147,9 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>410</y>
+        <y>450</y>
         <width>911</width>
-        <height>71</height>
+        <height>91</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -1166,7 +1176,7 @@
          <x>0</x>
          <y>0</y>
          <width>895</width>
-         <height>69</height>
+         <height>89</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_9">
@@ -1180,9 +1190,9 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>510</y>
+        <y>570</y>
         <width>911</width>
-        <height>111</height>
+        <height>61</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -1209,7 +1219,7 @@
          <x>0</x>
          <y>0</y>
          <width>895</width>
-         <height>109</height>
+         <height>59</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_10">
@@ -1218,6 +1228,255 @@
         </property>
        </layout>
       </widget>
+     </widget>
+     <widget class="QPushButton" name="pushButton_6">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>130</y>
+        <width>80</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Добавить</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="prod_kolvo_svoi">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>130</y>
+        <width>71</width>
+        <height>25</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>-10</y>
+        <width>181</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QWidget" name="">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>156</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_8">
+        <item>
+         <widget class="QRadioButton" name="radioButton">
+          <property name="text">
+           <string>Выбрать</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="radioButton_2">
+          <property name="text">
+           <string>Свой</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>70</y>
+        <width>851</width>
+        <height>54</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_12">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="4,3,3,3,3,3,2,2,2,2">
+         <property name="spacing">
+          <number>6</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_31">
+           <property name="text">
+            <string>Продукты</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_32">
+           <property name="text">
+            <string>жив. белки</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_33">
+           <property name="text">
+            <string>раст. белки</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_34">
+           <property name="text">
+            <string>жив. жир</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_35">
+           <property name="text">
+            <string>раст. жир </string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_36">
+           <property name="text">
+            <string>углевод</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_37">
+           <property name="text">
+            <string>Ca</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_38">
+           <property name="text">
+            <string>P</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_39">
+           <property name="text">
+            <string>ккал</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_40">
+           <property name="text">
+            <string>С</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="4,3,3,3,3,3,2,2,2,2">
+         <item>
+          <widget class="QLineEdit" name="produkt_svoi">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="prod_kolvo_svoi_2">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="prod_kolvo_svoi_3">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="prod_kolvo_svoi_4">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="prod_kolvo_svoi_5">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="prod_kolvo_svoi_6">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="prod_kolvo_svoi_7">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="prod_kolvo_svoi_8">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="prod_kolvo_svoi_9">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="prod_kolvo_svoi_10">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
      </widget>
     </widget>
     <widget class="QWidget" name="tab_3">
