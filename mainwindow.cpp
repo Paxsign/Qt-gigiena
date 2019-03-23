@@ -204,7 +204,7 @@ void MainWindow::on_pushButton_2_clicked()
 }
 
 void MainWindow::on_pushButton_4_clicked()
-{qDebug()<<QString::number(belki);
+{   QString ending;
     QTableWidgetItem* uglev=new QTableWidgetItem;
     QTableWidgetItem* belk=new QTableWidgetItem;
     QTableWidgetItem* zhirr=new QTableWidgetItem;
@@ -260,6 +260,7 @@ void MainWindow::on_pushButton_4_clicked()
         QTableWidgetItem* itog_bel=new QTableWidgetItem;
         itog_bel->setText("меньше нормы");
         ui->tableWidget_2->setItem(2,2,itog_bel);
+        ending=ending+ui->tableWidget_2->verticalHeaderItem(2)->text()+" "+ui->tableWidget_2->item(2,2)->text()+";\n";
     }
     else {
         QTableWidgetItem* itog_bel=new QTableWidgetItem;
@@ -276,6 +277,7 @@ void MainWindow::on_pushButton_4_clicked()
         QTableWidgetItem* itog_belkkal=new QTableWidgetItem;
         itog_belkkal->setText("меньше нормы");
         ui->tableWidget_2->setItem(3,2,itog_belkkal);
+        ending=ending+ui->tableWidget_2->verticalHeaderItem(3)->text()+" "+ui->tableWidget_2->item(3,2)->text()+";\n";
     }
     else {
         QTableWidgetItem* itog_belkkal=new QTableWidgetItem;
@@ -292,6 +294,7 @@ void MainWindow::on_pushButton_4_clicked()
         QTableWidgetItem* itog_zhir=new QTableWidgetItem;
         itog_zhir->setText("меньше нормы");
         ui->tableWidget_2->setItem(6,2,itog_zhir);
+        ending=ending+ui->tableWidget_2->verticalHeaderItem(6)->text()+" "+ui->tableWidget_2->item(6,2)->text()+";\n";
     }
     else {
         QTableWidgetItem* itog_zhir=new QTableWidgetItem;
@@ -308,6 +311,7 @@ void MainWindow::on_pushButton_4_clicked()
         QTableWidgetItem* itog_zhirkkal=new QTableWidgetItem;
         itog_zhirkkal->setText("меньше нормы");
         ui->tableWidget_2->setItem(7,2,itog_zhirkkal);
+        ending=ending+ui->tableWidget_2->verticalHeaderItem(7)->text()+" "+ui->tableWidget_2->item(7,2)->text()+";\n";
     }
     else {
         QTableWidgetItem* itog_zhirkkal=new QTableWidgetItem;
@@ -324,6 +328,7 @@ void MainWindow::on_pushButton_4_clicked()
         QTableWidgetItem* itog_ugl=new QTableWidgetItem;
         itog_ugl->setText("меньше нормы");
         ui->tableWidget_2->setItem(10,2,itog_ugl);
+ending=ending+ui->tableWidget_2->verticalHeaderItem(10)->text()+" "+ui->tableWidget_2->item(10,2)->text()+";\n";
     }
     else {
         QTableWidgetItem* itog_ugl=new QTableWidgetItem;
@@ -335,6 +340,7 @@ void MainWindow::on_pushButton_4_clicked()
         QTableWidgetItem* itog_Ca=new QTableWidgetItem;
         itog_Ca->setText("меньше нормы");
         ui->tableWidget_2->setItem(13,2,itog_Ca);
+        ending=ending+ui->tableWidget_2->verticalHeaderItem(13)->text()+" "+ui->tableWidget_2->item(13,2)->text()+";\n";
     }
     else {
         QTableWidgetItem* itog_Ca=new QTableWidgetItem;
@@ -345,6 +351,8 @@ void MainWindow::on_pushButton_4_clicked()
         QTableWidgetItem* itog_P=new QTableWidgetItem;
         itog_P->setText("меньше нормы");
         ui->tableWidget_2->setItem(14,2,itog_P);
+
+        ending=ending+ui->tableWidget_2->verticalHeaderItem(14)->text()+" "+ui->tableWidget_2->item(14,2)->text()+";\n";
     }
     else {
         QTableWidgetItem* itog_P=new QTableWidgetItem;
@@ -355,27 +363,19 @@ void MainWindow::on_pushButton_4_clicked()
         QTableWidgetItem* itog_C=new QTableWidgetItem;
         itog_C->setText("меньше нормы");
         ui->tableWidget_2->setItem(15,2,itog_C);
+
+        ending=ending+ui->tableWidget_2->verticalHeaderItem(15)->text()+" "+ui->tableWidget_2->item(15,2)->text()+";\n";
     }
     else {
         QTableWidgetItem* itog_C=new QTableWidgetItem;
         itog_C->setText("норма");
         ui->tableWidget_2->setItem(15,2,itog_C);
     }
+
+
+    ui->textEdit->setText(ending);
 }
 
-void MainWindow::on_pushButton_5_clicked()
-{
-
-        QHBoxLayout *layout = new QHBoxLayout(this);
-         QLabel *lbl = new QLabel("123333333333333333333333" , this);
-         QLabel *lbl1 = new QLabel("12366666 66666666666666" , this);
-         layout->addWidget(lbl,1);
-         layout->addWidget(lbl1,0);
-        ui->verticalLayout_11->addLayout(layout);
-        ui->verticalLayout_11->setAlignment(Qt::AlignTop);
-
-
-}
 
 void MainWindow::on_pushButton_6_clicked()
 {
