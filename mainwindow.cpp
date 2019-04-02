@@ -337,10 +337,15 @@ void MainWindow::on_pushButton_2_clicked()
 }
 
 void MainWindow::on_pushButton_4_clicked()
-{   QString ending;
+{   int i;
+    i=1;
+    QString ending;
     QTableWidgetItem* uglev=new QTableWidgetItem;
+    QTableWidgetItem* uglev_norm=new QTableWidgetItem;
     QTableWidgetItem* belk=new QTableWidgetItem;
+    QTableWidgetItem* belk_norm=new QTableWidgetItem;
     QTableWidgetItem* zhirr=new QTableWidgetItem;
+    QTableWidgetItem* zhirr_norm=new QTableWidgetItem;
     QTableWidgetItem* Calc=new QTableWidgetItem;
     QTableWidgetItem* Phos=new QTableWidgetItem;
     QTableWidgetItem* vitC=new QTableWidgetItem;
@@ -352,13 +357,23 @@ void MainWindow::on_pushButton_4_clicked()
     QTableWidgetItem* zhir_kkal=new QTableWidgetItem;
     QTableWidgetItem* rastkzhir=new QTableWidgetItem;
     QTableWidgetItem* sootn=new QTableWidgetItem;
+    QTableWidgetItem* kkal_zav_procent=new QTableWidgetItem;
+    QTableWidgetItem* kkal_obed_procent=new QTableWidgetItem;
+    QTableWidgetItem* kkal_uzin_procent=new QTableWidgetItem;
+    QTableWidgetItem* kkal_perekus_procent=new QTableWidgetItem;
     belk->setText(QString::number(belki));
     ui->tableWidget_2->setItem(1,0,belk);
+    belk_norm->setText(ui->ves->text());
+    ui->tableWidget_2->setItem(1,1,belk_norm);
     uglev->setText(QString::number(uglevod));
     ui->tableWidget_2->setItem(9,0,uglev);
+    uglev_norm->setText(QString::number(ui->ves->text().toFloat()*4));
+    ui->tableWidget_2->setItem(9,1,uglev_norm);
+    zhirr_norm->setText(ui->ves->text());
+   ui->tableWidget_2->setItem(5,1,zhirr_norm);
     zhirr->setText(QString::number(zhir));
-    ui->tableWidget_2->setItem(5,0,zhirr);
-    Calc->setText(QString::number(Ca));
+   ui->tableWidget_2->setItem(5,0,zhirr);
+   Calc->setText(QString::number(Ca));
     ui->tableWidget_2->setItem(13,0,Calc);
     Phos->setText(QString::number(P));
     ui->tableWidget_2->setItem(14,0,Phos);
@@ -382,6 +397,14 @@ void MainWindow::on_pushButton_4_clicked()
     sootn->setText(fff);
     ui->tableWidget_2->setItem(11,0,sootn);
 
+    kkal_zav_procent->setText(QString::number((kkal_zavtrak*100)/kkal)+"%");
+    ui->tableWidget_2->setItem(20,0,kkal_zav_procent);
+    kkal_obed_procent->setText(QString::number((kkal_obed*100)/kkal)+"%");
+    ui->tableWidget_2->setItem(21,0,kkal_obed_procent);
+    kkal_uzin_procent->setText(QString::number((kkal_uzin*100)/kkal)+"%");
+    ui->tableWidget_2->setItem(22,0,kkal_uzin_procent);
+    kkal_perekus_procent->setText(QString::number(((kkal_perekus+kkal_perekus2)*100)/kkal)+"%");
+    ui->tableWidget_2->setItem(23,0,kkal_perekus_procent);
 
 
     if (ui->tableWidget_2->item(2,0)->text().toFloat()>55) {
@@ -393,7 +416,8 @@ void MainWindow::on_pushButton_4_clicked()
         QTableWidgetItem* itog_bel=new QTableWidgetItem;
         itog_bel->setText("меньше нормы");
         ui->tableWidget_2->setItem(2,2,itog_bel);
-        ending=ending+ui->tableWidget_2->verticalHeaderItem(2)->text()+" "+ui->tableWidget_2->item(2,2)->text()+";\n"+"Необходимо повысить употребление продуктов, содержащих животный белок (мясо, творог, молочные продукты, яйца)"+";\n";
+        ending=ending+QString::number(i)+"."+ui->tableWidget_2->verticalHeaderItem(2)->text()+" "+ui->tableWidget_2->item(2,2)->text()+";\n"+"Необходимо повысить употребление продуктов, содержащих животный белок (мясо, творог, молочные продукты, яйца)"+";\n";
+    i=i+1;
     }
     else {
         QTableWidgetItem* itog_bel=new QTableWidgetItem;
@@ -410,7 +434,8 @@ void MainWindow::on_pushButton_4_clicked()
         QTableWidgetItem* itog_belkkal=new QTableWidgetItem;
         itog_belkkal->setText("меньше нормы");
         ui->tableWidget_2->setItem(3,2,itog_belkkal);
-        ending=ending+ui->tableWidget_2->verticalHeaderItem(3)->text()+" "+ui->tableWidget_2->item(3,2)->text()+";\n"+"Чаще употреблять продукты, богатые животным и растительным белком(мясо, молочные продукты, бобовые, орехи и семечки, тофу)"+";\n";
+        ending=ending+QString::number(i)+"."+ui->tableWidget_2->verticalHeaderItem(3)->text()+" "+ui->tableWidget_2->item(3,2)->text()+";\n"+"Чаще употреблять продукты, богатые животным и растительным белком(мясо, молочные продукты, бобовые, орехи и семечки, тофу)"+";\n";
+    i=i+1;
     }
     else {
         QTableWidgetItem* itog_belkkal=new QTableWidgetItem;
@@ -427,7 +452,8 @@ void MainWindow::on_pushButton_4_clicked()
         QTableWidgetItem* itog_zhir=new QTableWidgetItem;
         itog_zhir->setText("меньше нормы");
         ui->tableWidget_2->setItem(6,2,itog_zhir);
-        ending=ending+ui->tableWidget_2->verticalHeaderItem(6)->text()+" "+ui->tableWidget_2->item(6,2)->text()+";\n"+"Увеличить потребление продуктов, богатых растительными жирами(растительные масла, орехи, авокадо, льняное семя)"+";\n";
+        ending=ending+QString::number(i)+"."+ui->tableWidget_2->verticalHeaderItem(6)->text()+" "+ui->tableWidget_2->item(6,2)->text()+";\n"+"Увеличить потребление продуктов, богатых растительными жирами(растительные масла, орехи, авокадо, льняное семя)"+";\n";
+    i=i+1;
     }
     else {
         QTableWidgetItem* itog_zhir=new QTableWidgetItem;
@@ -444,7 +470,8 @@ void MainWindow::on_pushButton_4_clicked()
         QTableWidgetItem* itog_zhirkkal=new QTableWidgetItem;
         itog_zhirkkal->setText("меньше нормы");
         ui->tableWidget_2->setItem(7,2,itog_zhirkkal);
-        ending=ending+ui->tableWidget_2->verticalHeaderItem(7)->text()+" "+ui->tableWidget_2->item(7,2)->text()+";\n"+"Увеличить потребление продуктов, богатых жирами(масла, сало, орехи, жирная рыба, мясо)"+";\n";
+        ending=ending+QString::number(i)+"."+ui->tableWidget_2->verticalHeaderItem(7)->text()+" "+ui->tableWidget_2->item(7,2)->text()+";\n"+"Увеличить потребление продуктов, богатых жирами(масла, сало, орехи, жирная рыба, мясо)"+";\n";
+    i=i+1;
     }
     else {
         QTableWidgetItem* itog_zhirkkal=new QTableWidgetItem;
@@ -461,7 +488,8 @@ void MainWindow::on_pushButton_4_clicked()
         QTableWidgetItem* itog_ugl=new QTableWidgetItem;
         itog_ugl->setText("меньше нормы");
         ui->tableWidget_2->setItem(10,2,itog_ugl);
-ending=ending+ui->tableWidget_2->verticalHeaderItem(10)->text()+" "+ui->tableWidget_2->item(10,2)->text()+";\n"+"Чаще употреблять продукты, с высоким содержанием углеводов(мучные изделия, крупы, овощи и фрукты)"+";\n";
+ending=ending+QString::number(i)+"."+ui->tableWidget_2->verticalHeaderItem(10)->text()+" "+ui->tableWidget_2->item(10,2)->text()+";\n"+"Чаще употреблять продукты, с высоким содержанием углеводов(мучные изделия, крупы, овощи и фрукты)"+";\n";
+   i=i+1;
     }
     else {
         QTableWidgetItem* itog_ugl=new QTableWidgetItem;
@@ -473,7 +501,8 @@ ending=ending+ui->tableWidget_2->verticalHeaderItem(10)->text()+" "+ui->tableWid
         QTableWidgetItem* itog_Ca=new QTableWidgetItem;
         itog_Ca->setText("меньше нормы");
         ui->tableWidget_2->setItem(13,2,itog_Ca);
-        ending=ending+ui->tableWidget_2->verticalHeaderItem(13)->text()+" "+ui->tableWidget_2->item(13,2)->text()+";\n"+"Увеличить потребление продуктов, содержащих кальций(твердые сыры, кунжут, фасоль, шоколад, рыба, творог)"+";\n";
+        ending=ending+QString::number(i)+"."+ui->tableWidget_2->verticalHeaderItem(13)->text()+" "+ui->tableWidget_2->item(13,2)->text()+";\n"+"Увеличить потребление продуктов, содержащих кальций(твердые сыры, кунжут, фасоль, шоколад, рыба, творог)"+";\n";
+   i=i+1;
     }
     else {
         QTableWidgetItem* itog_Ca=new QTableWidgetItem;
@@ -485,7 +514,8 @@ ending=ending+ui->tableWidget_2->verticalHeaderItem(10)->text()+" "+ui->tableWid
         itog_P->setText("меньше нормы");
         ui->tableWidget_2->setItem(14,2,itog_P);
 
-        ending=ending+ui->tableWidget_2->verticalHeaderItem(14)->text()+" "+ui->tableWidget_2->item(14,2)->text()+";\n"+"(Чаще употреблять продукты, содержащие фосфор(морская рыба, сыр, фасоль, гречневая крупа, горох, мясо)"+";\n";
+        ending=ending+QString::number(i)+"."+ui->tableWidget_2->verticalHeaderItem(14)->text()+" "+ui->tableWidget_2->item(14,2)->text()+";\n"+"(Чаще употреблять продукты, содержащие фосфор(морская рыба, сыр, фасоль, гречневая крупа, горох, мясо)"+";\n";
+    i=i+1;
     }
     else {
         QTableWidgetItem* itog_P=new QTableWidgetItem;
@@ -497,37 +527,92 @@ ending=ending+ui->tableWidget_2->verticalHeaderItem(10)->text()+" "+ui->tableWid
         itog_C->setText("меньше нормы");
         ui->tableWidget_2->setItem(15,2,itog_C);
 
-        ending=ending+ui->tableWidget_2->verticalHeaderItem(15)->text()+" "+ui->tableWidget_2->item(15,2)->text()+";\n"+"Чаще употреблять продукты, содержащие витамин C(цитрусовые, шиповник, капуста, облепиха, яблоко, черная смородина, помидоры)"+";\n";
+        ending=ending+QString::number(i)+"."+ui->tableWidget_2->verticalHeaderItem(15)->text()+" "+ui->tableWidget_2->item(15,2)->text()+";\n"+"Чаще употреблять продукты, содержащие витамин C(цитрусовые, шиповник, капуста, облепиха, яблоко, черная смородина, помидоры)"+";\n";
+    i=i+1;
     }
     else {
         QTableWidgetItem* itog_C=new QTableWidgetItem;
         itog_C->setText("норма");
         ui->tableWidget_2->setItem(15,2,itog_C);
     }
+    if(ui->tableWidget_2->item(1,0)->text().toFloat()<ui->tableWidget_2->item(1,1)->text().toFloat())
+    {
+        QTableWidgetItem* itog_belk=new QTableWidgetItem;
+        itog_belk->setText("ниже нормы");
+        ui->tableWidget_2->setItem(1,2,itog_belk);
+        ending=ending+QString::number(i)+"."+ui->tableWidget_2->verticalHeaderItem(1)->text()+" "+ui->tableWidget_2->item(1,2)->text()+";\n";
+    i=i+1;
+    }
+    else
+    {
+        QTableWidgetItem* itog_belk=new QTableWidgetItem;
+        itog_belk->setText("нормa");
+      ui->tableWidget_2->setItem(1,2,itog_belk);
+    }
+    if(ui->tableWidget_2->item(5,0)->text().toFloat()<ui->tableWidget_2->item(5,1)->text().toFloat())
+    {
+        QTableWidgetItem* itog_ugl=new QTableWidgetItem;
+        itog_ugl->setText("ниже нормы");
+        ui->tableWidget_2->setItem(5,2,itog_ugl);
+        ending=ending+QString::number(i)+"."+ui->tableWidget_2->verticalHeaderItem(5)->text()+" "+ui->tableWidget_2->item(5,2)->text()+";\n";
+        i=i+1;
+    }
+    else
+    {
+        QTableWidgetItem* itog_ugl=new QTableWidgetItem;
+        itog_ugl->setText("нормa");
+        ui->tableWidget_2->setItem(5,2,itog_ugl);
+
+    }
+
+    if(ui->tableWidget_2->item(9,0)->text().toFloat()<ui->tableWidget_2->item(9,1)->text().toFloat())
+    {
+        QTableWidgetItem* itog_zhir=new QTableWidgetItem;
+        itog_zhir->setText("ниже нормы");
+        ui->tableWidget_2->setItem(9,2,itog_zhir);
+        ending=ending+QString::number(i)+"."+ui->tableWidget_2->verticalHeaderItem(9)->text()+" "+ui->tableWidget_2->item(9,2)->text()+";\n";
+        i=i+1;
+    }
+    else
+    {
+        QTableWidgetItem* itog_zhir=new QTableWidgetItem;
+        itog_zhir->setText("норма");
+        ui->tableWidget_2->setItem(9,2,itog_zhir);
+    }
+
     if (IMT<17){
-        ending=ending+"Выраженный дефицит массы тела"+";\n";
+        ending=ending+QString::number(i)+"."+"Выраженный дефицит массы тела"+";\n";
+        i=i+1;
     }
     else if (IMT>16 & IMT<18.5) {
-        ending=ending+"Недостаточная (дефицит) масса тела"+";\n";
+        ending=ending+QString::number(i)+"."+"Недостаточная (дефицит) масса тела"+";\n";
+        i=i+1;
 
     }
     else if (IMT>18.5 & IMT<25) {
-        ending=ending+"ИМТ: Норма"+";\n";
+        ending=ending+QString::number(i)+"."+"ИМТ: Норма"+";\n";
+        i=i+1;
 }
     else if (IMT>24 & IMT<30) {
-        ending=ending+"ИМТ: Избыточная масса тела"+";\n";
+        ending=ending+QString::number(i)+"."+"ИМТ: Избыточная масса тела"+";\n";
+        i=i+1;
     }
     else if (IMT>29 & IMT<35) {
-        ending=ending+"ИМТ: Ожирение"+";\n";
+        ending=ending+QString::number(i)+"."+"ИМТ: Ожирение"+";\n";
+        i=i+1;
     }
     else if (IMT>34 & IMT<40) {
-        ending=ending+"ИМТ: Ожирение резкое"+";\n";
+        ending=ending+QString::number(i)+"."+"ИМТ: Ожирение резкое"+";\n";
+        i=i+1;
     }
     else if (IMT>=40) {
-        ending=ending+"ИМТ: Очень резко выраженное ожирение"+";\n";
+        ending=ending+QString::number(i)+"."+"ИМТ: Очень резко выраженное ожирение"+";\n";
+        i=i+1;
     }
-    if (Pr>0.8 & ui->zen->isChecked()) {ending=ending+"От/Об выше нормы"+";\n";}
-    if (Pr>0.9 & ui->muz->isChecked()) {ending=ending+"От/Об выше нормы"+";\n";}
+    if (Pr>0.8 & ui->zen->isChecked()) {ending=ending+QString::number(i)+"."+"От/Об выше нормы"+";\n";
+    i=i+1;}
+    if (Pr>0.9 & ui->muz->isChecked()) {ending=ending+QString::number(i)+"."+"От/Об выше нормы"+";\n";
+    i=i+1;}
     ui->textEdit->setText(ending);
 }
 

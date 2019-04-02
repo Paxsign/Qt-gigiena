@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>950</width>
-    <height>583</height>
+    <height>679</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,11 +20,11 @@
       <x>0</x>
       <y>20</y>
       <width>941</width>
-      <height>551</height>
+      <height>651</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -2159,7 +2159,7 @@
         <x>0</x>
         <y>40</y>
         <width>881</width>
-        <height>581</height>
+        <height>571</height>
        </rect>
       </property>
       <property name="verticalScrollBarPolicy">
@@ -2187,7 +2187,7 @@
       </row>
       <row>
        <property name="text">
-        <string>общее количество, г</string>
+        <string>Общее количество белков, г</string>
        </property>
       </row>
       <row>
@@ -2286,6 +2286,26 @@
        <property name="text">
         <string>Распределение суточной 
 калорийности по приемам пищи</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Завтрак</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Обед</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Ужин</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Перекус</string>
        </property>
       </row>
       <column>
